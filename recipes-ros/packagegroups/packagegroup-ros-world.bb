@@ -172,6 +172,7 @@ RDEPENDS_${PN} = "\
     rosbridge-library \
     rosbridge-server \
     rosbridge-suite \
+    duo3d-driver \
     "
 
 # ar-track-alvar does not compile due to unknown opencv identifiers.
