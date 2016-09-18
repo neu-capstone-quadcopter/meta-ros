@@ -11,4 +11,20 @@ SRC_URI[sha256sum] = "c2e6c7bc81f5cce8d615d490057e5a00807eabc18a17fd32006355a5cf
 
 S = "${WORKDIR}/${ROS_SP}"
 
+do_fixcfgpermissions() {
+	cd ${S}
+	chmod 777 cfg/Duo3D.cfg
+}
+
+ARM_OBJECTS_DIR = "~/Documents/CL-DUO3D-ARM-1.0.80.20/DUOSDK/SDK/linux/arm/"
+
+do_copyarmobjects() {
+	cd ${S}
+	rm -r lib
+	cp -r ${ARM_OBJECTS_DIR} lib
+}
+
+addtask fixcfgpermissions after do_unpack before do_compile
+addtask copyarmobjects    after do_unpack before do_compile
+
 inherit catkin
