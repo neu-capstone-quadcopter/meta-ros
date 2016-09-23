@@ -20,6 +20,7 @@ RDEPENDS_${PN} = "\
     python-logging \
     python-threading \
     python-rospkg \
+    python-defusedxml \
     rosgraph \
     python-pyyaml \
     roslib \
