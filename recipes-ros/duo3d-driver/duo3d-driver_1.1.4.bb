@@ -5,9 +5,11 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc
 
 DEPENDS = "rosconsole roscpp sensor-msgs image-transport cv-bridge tf dynamic-reconfigure pcl-conversions"
 
+RDEPENDS_${PN} += "kernel-module-duo3d"
+
 SRC_URI = "https://github.com/neu-capstone-quadcopter/${ROS_SPN}/archive/v${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "c8b6f73f15fc4bcb7e945fee98914d20"
-SRC_URI[sha256sum] = "c038d1f489f38c38ff7b54c689455c4f56f10cb2650c5757ad06eabb123180e2"
+SRC_URI[md5sum] = "36ebb4b571a4f42f618d0eeaf0b38f60"
+SRC_URI[sha256sum] = "14bbe1ba3ed40889578079f6b0b5d9fa204ee2435777348e377e98e69cf1e9c3"
 
 S = "${WORKDIR}/${ROS_SP}"
 
