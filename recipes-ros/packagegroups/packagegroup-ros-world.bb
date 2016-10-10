@@ -172,6 +172,7 @@ RDEPENDS_${PN} = "\
     rosbridge-library \
     rosbridge-server \
     rosbridge-suite \
+    serial \
     duo3d-driver \
     "
 
