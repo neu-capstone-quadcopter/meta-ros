@@ -173,6 +173,7 @@ RDEPENDS_${PN} = "\
     rosbridge-server \
     rosbridge-suite \
     serial \
+    nmea-navsat-driver \
     duo3d-driver \
     "
 
