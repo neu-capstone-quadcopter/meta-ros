@@ -98,7 +98,6 @@ RDEPENDS_${PN} = "\
     stereo-image-proc \
     random-numbers \
     shape-tools \
-    octomap-msgs \
     pcl-msgs \
     laser-geometry \
     map-msgs \
@@ -115,6 +114,9 @@ RDEPENDS_${PN} = "\
     rosserial-xbee \
     robot-state-publisher \
     octomap \
+    octomap-msgs \
+    octomap-ros \
+    octomap-server \
     geometric-shapes \
     pcl-conversions \
     pcl-ros \
@@ -135,7 +137,6 @@ RDEPENDS_${PN} = "\
     navfn \
     rotate-recovery \
     voxel-grid \
-    octomap-ros \
     audio-common-msgs \
     camera-info-manager-py \
     depthimage-to-laserscan \
