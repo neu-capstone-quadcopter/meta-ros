@@ -7,11 +7,18 @@ DEPENDS = "rosconsole roscpp sensor-msgs image-transport cv-bridge tf dynamic-re
 
 RDEPENDS_${PN} += "kernel-module-duo3d"
 
-SRC_URI = "https://github.com/neu-capstone-quadcopter/${ROS_SPN}/archive/v${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
+# With Dense3D
+#SRCREV = "3fe075e91c0c77ac11ec62b782b3f4f2d7ecf50a"
+#SRC_URI = "gitsm://github.com/neu-capstone-quadcopter/duo3d_driver.git;branch=master"
+
+# Without Dense3d
+SRCREV = "2991fd173af2a7f6bc3483924f570b743dc3b724"
+SRC_URI = "gitsm://github.com/neu-capstone-quadcopter/duo3d_driver.git;branch=nvanbenschoten/notDense"
+
 SRC_URI[md5sum] = "36ebb4b571a4f42f618d0eeaf0b38f60"
 SRC_URI[sha256sum] = "14bbe1ba3ed40889578079f6b0b5d9fa204ee2435777348e377e98e69cf1e9c3"
 
-S = "${WORKDIR}/${ROS_SP}"
+S = "${WORKDIR}/git"
 
 ARM_OBJECTS_DIR = "~/Documents/CL-DUO3D-ARM-1.0.80.20/DUOSDK/SDK/linux/arm/"
 
@@ -21,6 +28,6 @@ do_copyarmobjects() {
 	cp -r ${ARM_OBJECTS_DIR} lib
 }
 
-addtask copyarmobjects    after do_unpack before do_compile
+addtask copyarmobjects after do_unpack before do_compile
 
 inherit catkin
